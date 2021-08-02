@@ -47,7 +47,7 @@ const adicionarLinha = (id) => {
   $('form').append(`
     <div class="row">
     <div class="col-2">${id}.</div>
-    <div class="col-4">
+    <div class="col-5">
       <input
         id="saldo${id}"
         pattern="[0-9]*" inputmode="numeric"
@@ -56,7 +56,7 @@ const adicionarLinha = (id) => {
         aria-label="saldo"
       />
     </div>
-    <div class="col-4">
+    <div class="col-5">
       <input
         id="saque${id}"
         pattern="[0-9]*" inputmode="numeric"
