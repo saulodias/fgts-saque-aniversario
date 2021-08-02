@@ -48,155 +48,32 @@
           <div class="col destaque">Saldo</div>
           <div class="col destaque">Valor do Saque</div>
         </div>
-        <div class="row">
-          <div class="col-2">Conta 1</div>
-          <div class="col">
-            <input
-              id="saldo1"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saldo"
-              placeholder="Saldo"
-              aria-label="saldo"
-            />
-          </div>
-          <div class="col">
-            <input
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              title="Tooltip on top"
-              id="saque1"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saque"
-              placeholder="Saque"
-              aria-label="saque"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-2">Conta 2</div>
-          <div class="col">
-            <input
-              id="saldo2"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saldo"
-              placeholder="Saldo"
-              aria-label="saldo"
-            />
-          </div>
-          <div class="col">
-            <input
-              id="saque2"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saque"
-              placeholder="Saque"
-              aria-label="saque"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-2">Conta 3</div>
-          <div class="col">
-            <input
-              id="saldo3"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saldo"
-              placeholder="Saldo"
-              aria-label="saldo"
-            />
-          </div>
-          <div class="col">
-            <input
-              id="saque3"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saque"
-              placeholder="Saque"
-              aria-label="saque"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-2">Conta 4</div>
-          <div class="col">
-            <input
-              id="saldo4"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saldo"
-              placeholder="Saldo"
-              aria-label="saldo"
-            />
-          </div>
-          <div class="col">
-            <input
-              id="saque4"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saque"
-              placeholder="Saque"
-              aria-label="saque"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-2">Conta 5</div>
-          <div class="col">
-            <input
-              id="saldo5"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saldo"
-              placeholder="Saldo"
-              aria-label="saldo"
-            />
-          </div>
-          <div class="col">
-            <input
-              id="saque5"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saque"
-              placeholder="Saque"
-              aria-label="saque"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-2 destaque">Total</div>
-          <div class="col">
-            <input
-              id="saldoTotal"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saldo-total"
-              placeholder="Saldo"
-              aria-label="saldo"
-              disabled
-            />
-          </div>
-          <div class="col">
-            <input
-              id="saqueTotal"
-              pattern="[0-9]*" inputmode="numeric"
-              value="0,00"
-              class="form-control form-control-sm money saque-total"
-              placeholder="Saque"
-              aria-label="saque"
-              disabled
-            />
-          </div>
-        </div>
       </form>
+      <div class="row">
+        <div class="col-2 destaque">Total</div>
+        <div class="col">
+          <input
+            id="saldoTotal"
+            pattern="[0-9]*" inputmode="numeric"
+            value="0,00"
+            class="form-control form-control-sm money saldo-total"
+            placeholder="Saldo"
+            aria-label="saldo"
+            disabled
+          />
+        </div>
+        <div class="col">
+          <input
+            id="saqueTotal"
+            pattern="[0-9]*" inputmode="numeric"
+            value="0,00"
+            class="form-control form-control-sm money saque-total"
+            placeholder="Saque"
+            aria-label="saque"
+            disabled
+          />
+        </div>
+      </div>
 
       <div id="aviso">
         *Os cálculos são feitos com base na tabela abaixo,

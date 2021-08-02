@@ -28,29 +28,56 @@ const maskedValue = (value) => $(".money").masked(String(Math.round(value*100)).
 const calc = (id) => {
   const unmaskedSaldo = unmaskedValue("#saldo"+id);
   const { saqueValor } = valorSaqueConta(unmaskedSaldo);
+  $("#saldo"+id).val(maskedValue(unmaskedSaldo));
   const maskedSaque = maskedValue(saqueValor);
   $("#saque"+id).val(maskedSaque);
 
-  const saldos = Array.from($(".saldo"));
-  let saldoTotal = 0;
-  saldos.forEach(saldo => saldoTotal += unmaskedValue("#" + saldo.id));
+  const saldos = Array.from($(".saldo")).map(saldo => unmaskedValue("#" + saldo.id));
+  const saques = Array.from($(".saque")).map(saque => unmaskedValue("#" + saque.id));
 
-  const saques = Array.from($(".saque"));
-  let saqueTotal = 0;
-  saques.forEach(saque => saqueTotal += unmaskedValue("#" + saque.id));
-
+  const saldoTotal = saldos.reduce((a, b) => a + b, 0);
+  const saqueTotal = saques.reduce((a, b) => a + b, 0);
   $("#saldoTotal").val(maskedValue(saldoTotal));
   $("#saqueTotal").val(maskedValue(saqueTotal));
+
+  if(saldos[saldos.length - 1]) {
+    adicionarLinha(saldos.length + 1);
+  }
 };
+
+const adicionarLinha = (id) => {
+  $('form').append(`
+    <div class="row">
+    <div class="col-2">Conta ${id}</div>
+    <div class="col">
+      <input
+        id="saldo${id}"
+        pattern="[0-9]*" inputmode="numeric"
+        class="form-control form-control-sm money saldo"
+        placeholder="Saldo"
+        aria-label="saldo"
+      />
+    </div>
+    <div class="col">
+      <input
+        id="saque${id}"
+        pattern="[0-9]*" inputmode="numeric"
+        value="0,00"
+        class="form-control form-control-sm money saque"
+        placeholder="Saque"
+        aria-label="saque"
+        disabled
+      />
+    </div>
+    </div>`);
+  $("#saldo"+id).mask("#.##0,00", { reverse: true });
+  $("#saque"+id).mask("#.##0,00", { reverse: true });
+  $("#saldo"+id).change(function(){
+      calc(id);  
+  });
+}
 
 
 $(document).ready(function () {
-    $(".money").mask("#.##0,00", { reverse: true });
-    $(".percent").mask("##0,00%", { reverse: true });
-  
-
-    $(".money").change(function(event){
-        const id = event.currentTarget.id[5];
-        calc(id);
-    });
+  adicionarLinha(1);
 });
