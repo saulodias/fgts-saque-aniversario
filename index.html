@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Calculadora do Saque Aniversário do FGTS</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style type="text/css">
+      .row {
+        margin-top: 0.5rem;
+      }
+      .saque-total {
+        border: 2px solid slateblue;
+      }
+      .destaque {
+        font-weight: bold;
+        color: slateblue;
+      }
+      h1,
+      #aviso {
+        margin: 1rem 0;
+      }
+      .table td,
+      .table th {
+        padding: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculadora do Saque Aniversário do FGTS</h1>
+	  <p>Insira os valores disponíveis nas suas contas ativas e inativas.</p>
+      <form>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col destaque">Saldo</div>
+          <div class="col destaque">Valor do Saque</div>
+        </div>
+        <div class="row">
+          <div class="col-2">Conta 1</div>
+          <div class="col">
+            <input
+              id="saldo1"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saldo"
+              placeholder="Saldo"
+              aria-label="saldo"
+            />
+          </div>
+          <div class="col">
+            <input
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Tooltip on top"
+              id="saque1"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saque"
+              placeholder="Saque"
+              aria-label="saque"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">Conta 2</div>
+          <div class="col">
+            <input
+              id="saldo2"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saldo"
+              placeholder="Saldo"
+              aria-label="saldo"
+            />
+          </div>
+          <div class="col">
+            <input
+              id="saque2"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saque"
+              placeholder="Saque"
+              aria-label="saque"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">Conta 3</div>
+          <div class="col">
+            <input
+              id="saldo3"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saldo"
+              placeholder="Saldo"
+              aria-label="saldo"
+            />
+          </div>
+          <div class="col">
+            <input
+              id="saque3"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saque"
+              placeholder="Saque"
+              aria-label="saque"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">Conta 4</div>
+          <div class="col">
+            <input
+              id="saldo4"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saldo"
+              placeholder="Saldo"
+              aria-label="saldo"
+            />
+          </div>
+          <div class="col">
+            <input
+              id="saque4"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saque"
+              placeholder="Saque"
+              aria-label="saque"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">Conta 5</div>
+          <div class="col">
+            <input
+              id="saldo5"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saldo"
+              placeholder="Saldo"
+              aria-label="saldo"
+            />
+          </div>
+          <div class="col">
+            <input
+              id="saque5"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saque"
+              placeholder="Saque"
+              aria-label="saque"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2 destaque">Total</div>
+          <div class="col">
+            <input
+              id="saldoTotal"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saldo-total"
+              placeholder="Saldo"
+              aria-label="saldo"
+              disabled
+            />
+          </div>
+          <div class="col">
+            <input
+              id="saqueTotal"
+              type="text"
+              value="0,00"
+              class="form-control form-control-sm money saque-total"
+              placeholder="Saque"
+              aria-label="saque"
+              disabled
+            />
+          </div>
+        </div>
+      </form>
+
+      <div id="aviso">
+        *Os cálculos são feitos com base na tabela abaixo,
+        <a
+          href="https://www.caixa.gov.br/beneficios-trabalhador/fgts/saque-FGTS/Paginas/default.aspx"
+          target="_blank"
+          >consultada no site da Caixa Econômica Federal</a
+        >
+        em 01/08/2021.
+      </div>
+
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <th>Limite das faixas de saldo (em R$)</th>
+            <th>Alíquota</th>
+            <th>Parcela Adicional (em R$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Até 500,00</td>
+            <td>50,0%</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>De 500,01 até 1.000,00</td>
+            <td>40,0%</td>
+            <td>50,00</td>
+          </tr>
+          <tr>
+            <td>De 1.000,01 até 5.000,00</td>
+            <td>30,0%</td>
+            <td>150,00</td>
+          </tr>
+          <tr>
+            <td>De 5.000,01 até 10.000,00</td>
+            <td>20,0%</td>
+            <td>650,00</td>
+          </tr>
+          <tr>
+            <td>De 10000,01 até 15.000,00</td>
+            <td>15,0%</td>
+            <td>1150,00</td>
+          </tr>
+          <tr>
+            <td>De 15.000,01 até 20.000,00</td>
+            <td>10,0%</td>
+            <td>1.900,00</td>
+          </tr>
+          <tr>
+            <td>Acima de 20.000,01 &nbsp;<br /></td>
+            <td>5,0%</td>
+            <td>2.900,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./jquery.mask.min.js"></script>
+
+    <script src="./calc.js"></script>
+  </body>
+</html>
