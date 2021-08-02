@@ -51,7 +51,7 @@ const adicionarLinha = (id) => {
       <input
         id="saldo${id}"
         pattern="[0-9]*" inputmode="numeric"
-        class="form-control form-control-sm money saldo"
+        class="form-control money saldo"
         placeholder="Saldo"
         aria-label="saldo"
       />
@@ -61,7 +61,7 @@ const adicionarLinha = (id) => {
         id="saque${id}"
         pattern="[0-9]*" inputmode="numeric"
         value="0,00"
-        class="form-control form-control-sm money saque"
+        class="form-control money saque"
         placeholder="Saque"
         aria-label="saque"
         disabled
