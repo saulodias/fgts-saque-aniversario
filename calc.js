@@ -1,5 +1,3 @@
-
-
 const faixa = (saldo) => {
   const faixas = [
       { max: 500, aliquota: 50, adicional: 0, },
@@ -48,8 +46,8 @@ const calc = (id) => {
 const adicionarLinha = (id) => {
   $('form').append(`
     <div class="row">
-    <div class="col-2">Conta ${id}</div>
-    <div class="col">
+    <div class="col-2">${id}.</div>
+    <div class="col-4">
       <input
         id="saldo${id}"
         pattern="[0-9]*" inputmode="numeric"
@@ -58,7 +56,7 @@ const adicionarLinha = (id) => {
         aria-label="saldo"
       />
     </div>
-    <div class="col">
+    <div class="col-4">
       <input
         id="saque${id}"
         pattern="[0-9]*" inputmode="numeric"
